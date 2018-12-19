@@ -31,12 +31,17 @@ class Client(object):
             return 0
         self.time = time.time()
         self.add_token(data)
-        response = self.session.post(self.host + '/account/submit', data=data)
-        print('')
-        print(response.text)
-        if self.auth.status_code != 200:
-            exit(1)
-        return 1
+        try: 
+            response = self.session.post(self.host + '/account/submit', data=data)
+            print('')
+            print(response.text)
+            if self.auth.status_code != 200:
+                exit(1)
+            return 1
+        except:
+            print('Failed to submit stats to server! Connection lost?')
+            return 0
+
 
     def add_token(self, data):
         data['_csrf'] = self.token

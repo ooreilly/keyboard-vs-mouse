@@ -5,9 +5,9 @@ Once you have succesfully created an account on the server, go ahead input the
 server address, and your credentials.
 """
 
-host = 'http://52.34.148.54'
+host = 'http://localhost'
 
 login={
-    'email': 'ossian.oreilly@gmail.com', 
+    'email': 'test@example.com', 
     'password': 'test',
     }

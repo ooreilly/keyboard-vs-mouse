@@ -17,16 +17,24 @@ git clone https://github.com/ooreilly/keyboard-vs-mouse.git
 ```
 And open the directory.
 
-There is not really any need to install anything if you have all dependencies.
-
-Here's how to install the dependencies:
+You need install the following dependencies (if they are not already installed):
 ```
-pip install Xlib
+pip install pynput
+pip install keyboard
 pip install requests
 ```
+* The package [pynput](https://github.com/moses-palmer/pynput) is used for listening to the mouse.
+* The package [keyboard](https://github.com/boppreh/keyboard) is used for listening to the keyboard.
+* The package [requests](http://docs.python-requests.org/en/master/) is used for communicating with the server.
 
 ## Configuration
 Before you can being playing this **amazing** game, you must first configure the client. Open up `config.py` and follow the instructions.
+
+## Running
+To run this game, you need to have admin access. Launch by typing:
+```
+$ sudo python keyboardvsmouse.py
+```
 
 ## How the game works
 You get points for pressing keys on your keyboard. Each key press is worth one point. You lose points by pressing mouse buttons or moving the mouse. The amount of points you lose depend on how experienced you are and how long you have been playing for. Good luck!

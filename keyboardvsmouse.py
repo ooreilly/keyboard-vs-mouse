@@ -7,8 +7,8 @@ The first time you use this client you must edit `config.py`. Open this file
 and follow the instructions there.
 
 """
-import keyboard
-from pynput import mouse
+#import keyboard
+from pynput import mouse, keyboard
 import time
 import config as cfg
 import stats
@@ -45,6 +45,7 @@ def on_move(x, y):
     if status:
         log.reset()
     print(log)
+
 def on_click(x, y, button, pressed):
     log.recordButtonPress()
     log.recordTime(time.time())
@@ -57,10 +58,13 @@ def on_click(x, y, button, pressed):
 def on_scroll(x, y, dx, dy):
     pass
 
-keyboard.on_release(on_release)
-
-with mouse.Listener(
-        on_move=on_move,
+with keyboard.Listener(
+        on_release=on_release
+        ) as listener:
+    with mouse.Listener(
         on_click=on_click,
-        on_scroll=on_scroll) as listener:
-    listener.join()
+        on_move=on_move
+        ) as mlistener:
+        listener.join()
+        mlistener.join()
+

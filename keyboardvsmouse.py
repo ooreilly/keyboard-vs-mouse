@@ -25,10 +25,10 @@ log = stats.Stats()
 log.time = time.time()
 log.startTime = time.time()
 
-print('Start typing to collect points')
-print('Press `q` to exit.')
+print('Start pressing keys to collect points')
 print('As long as you leave this window open and do not drop your connection '\
       'you will collect points.')
+print('Close the tab to exit if `CTRL` + `C` does not work.')
 print('Go ahead and do other tasks now.')
 
 def on_release(e):

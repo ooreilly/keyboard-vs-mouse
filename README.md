@@ -28,7 +28,19 @@ pip install requests
 * The package [requests](http://docs.python-requests.org/en/master/) is used for communicating with the server.
 
 ## Configuration
-Before you can being playing this **amazing** game, you must first configure the client. Open up `config.py` and follow the instructions.
+Before you can being playing this **amazing** game, you must first configure the client. 
+First, **Make sure to create an account on the server before you attempt to login.**
+
+Next, create the file `config.py` and copy and paste the following into it:
+```
+host = 'http://server-address.com'
+
+login={
+    'email': 'youremail@example.com', 
+    'password': 'yourpassword',
+    }
+```
+Finally, change the `host`, `email`, and `password`.
 
 ## Running
 To run this game, you need to have admin access. Launch by typing:

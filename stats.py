@@ -18,7 +18,7 @@ class Stats(object):
         self.stats['motion'] += 1
 
     def recordTime(self, time):
-        self.stats['time'] += time - self.time
+        self.stats['time'] = time - self.time
 
     def getData(self):
         return self.stats

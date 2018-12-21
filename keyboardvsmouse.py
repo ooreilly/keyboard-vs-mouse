@@ -33,8 +33,6 @@ print('Go ahead and do other tasks now.')
 
 def on_release(e):
     log.recordKeyPress()
-    log.recordTime(time.time())
-    log.time = time.time()
     print(log)
 
 def on_move(x, y):
@@ -45,8 +43,6 @@ def on_move(x, y):
 
 def on_click(x, y, button, pressed):
     log.recordButtonPress()
-    log.recordTime(time.time())
-    log.time = time.time()
     print(log)
 
 def on_scroll(x, y, dx, dy):
@@ -54,9 +50,11 @@ def on_scroll(x, y, dx, dy):
 
 def idle():
     while True:
+        log.recordTime(time.time())
         status = cli.submit(log.getData())
         if status:
             log.reset()
+            log.time = time.time()
         print(log)
         time.sleep(0.5)
 

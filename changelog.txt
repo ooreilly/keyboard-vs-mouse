@@ -1,0 +1,6 @@
+1.1.1
+* Fix timer
+
+1.1.0
+* Add version check
+* Do not update stats when idle

@@ -11,7 +11,7 @@ import keyboard as unix_keyboard
 from pynput import mouse, keyboard
 import time
 import os
-import config2 as cfg
+import config as cfg
 import stats
 import client
 import platform

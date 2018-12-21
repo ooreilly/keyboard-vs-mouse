@@ -1,11 +1,14 @@
+VERSION='1.0.1'
+
 import requests
 import time
 class Client(object):
 
     def __init__(self, host, login, cooldown=4):
-        print('========= KEYBOARD VS MOUSE (client, beta 1.0.0)')
+        print('========= KEYBOARD VS MOUSE (client, beta %s)'%VERSION)
         self.host = host
         self.login = login  
+        self.login['version'] = VERSION
         self.session = requests.Session()
         self.cooldown = cooldown
         self.time = time.time()
